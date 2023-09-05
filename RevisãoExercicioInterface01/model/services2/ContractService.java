@@ -19,32 +19,27 @@ public class ContractService {
 	public void processContract(Contract contract, int months) {
 		
 		/*Achando o valor da parcela original*/
-		double valueInstalmmentOrigin = contract.getTotalValue() / months;
-		
+		double basicQuota = contract.getTotalValue() / months;
+				
 		//Pegando a lista original
 		List<Installment> listOrigen = contract.getInstallments();
-		
-		//Data de partida do Contrato
-		LocalDate deuDate = contract.getDate();
-		
-		//Gerando nova lista para armazenar os valores atualizdos comas taxas
-		List<Installment> newList = new ArrayList<>();
-		
+						
 		for (int i = 1; i <= months; i++) {
 						
-			//Aumentar 30 dias apartartir da data original
-			deuDate = deuDate.plusMonths(1);
+			//Aumentar 30 dias apartir da data original
+			LocalDate deuDate = contract.getDate().plusMonths(i);
 			
 			//Adicionado juros na parcela
-			double valueInstallment = valueInstalmmentOrigin + onlinePaymentService.interest(valueInstalmmentOrigin, i);
-			valueInstallment += onlinePaymentService.paymentFee(valueInstallment);
+			double interest = onlinePaymentService.interest(basicQuota, i);
+			double fee =  onlinePaymentService.paymentFee(basicQuota + interest);
+			
+			double quota = basicQuota + interest + fee;
 			
 			//Instancia uma nova parcela ja com o juros e taxa
-			Installment installment = new Installment(deuDate, valueInstallment);
-			
-			newList.add(installment);
+			contract.getInstallments().add(new Installment(deuDate, quota));
+						
 		}
-		listOrigen.addAll(newList);				
+					
 	}
 	
 }

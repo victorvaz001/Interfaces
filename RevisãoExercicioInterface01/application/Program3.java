@@ -35,13 +35,11 @@ public class Program3 {
 		int numberOfInstallment = sc.nextInt();
 		
 		contractService.processContract(contract, numberOfInstallment);
-		
-		
-		
+						
 		System.out.println();
 		System.out.println("Parcelas: ");
 		for (Installment inst : contract.getInstallments()) {
-			System.out.println(format.format(inst.getDueDate()) + " - " + inst.getAmmount());
+			System.out.println(inst);
 		}
 		sc.close();
 
