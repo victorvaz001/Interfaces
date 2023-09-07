@@ -10,5 +10,6 @@
 	<classpathentry kind="src" path="RevisãoExercicioInterface01"/>
 	<classpathentry kind="src" path="Herdar-VS-CumprirContrato"/>
 	<classpathentry kind="src" path="HerançaMultipla-ProblemaDiamante"/>
+	<classpathentry kind="src" path="Interface-Comparable"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
