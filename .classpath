@@ -11,5 +11,6 @@
 	<classpathentry kind="src" path="Herdar-VS-CumprirContrato"/>
 	<classpathentry kind="src" path="HerançaMultipla-ProblemaDiamante"/>
 	<classpathentry kind="src" path="Interface-Comparable"/>
+	<classpathentry kind="src" path="DefaultMethds"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
