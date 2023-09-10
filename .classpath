@@ -12,5 +12,6 @@
 	<classpathentry kind="src" path="HerançaMultipla-ProblemaDiamante"/>
 	<classpathentry kind="src" path="Interface-Comparable"/>
 	<classpathentry kind="src" path="DefaultMethds"/>
+	<classpathentry kind="src" path="Tipos_Coringa_Wildcard_Types"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
